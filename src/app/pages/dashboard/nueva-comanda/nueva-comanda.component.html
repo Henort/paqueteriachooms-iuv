@@ -1,0 +1,99 @@
+<div class=" flex items-center justify-center p-6">
+  <!-- Formulario -->
+   @if (!isComandaCreated) {
+     <div class="bg-white shadow-lg rounded-lg p-8 max-w-lg w-full">
+       <h1 class="text-2xl font-semibold text-gray-700 mb-6">Levantar Comanda de Envío</h1>
+       <form (ngSubmit)="crearComanda()">
+         <!-- Remitente -->
+         <div class="mb-4">
+           <label for="remitente" class="block text-sm font-medium text-gray-600 mb-1">Remitente</label>
+           <input
+             id="remitente"
+             type="text"
+             [(ngModel)]="remitente"
+             name="remitente"
+             class="w-full border-gray-300 rounded-lg shadow-sm p-2 focus:ring-blue-500 focus:border-blue-500"
+             placeholder="Nombre del remitente"
+           />
+         </div>
+
+         <!-- Dirección del remitente -->
+         <div class="mb-4">
+           <label for="direccionRemitente" class="block text-sm font-medium text-gray-600 mb-1">Dirección del Remitente</label>
+           <textarea
+             id="direccionRemitente"
+             [(ngModel)]="direccionRemitente"
+             name="direccionRemitente"
+             class="w-full border-gray-300 rounded-lg shadow-sm p-2 focus:ring-blue-500 focus:border-blue-500"
+             placeholder="Dirección completa del remitente"
+           ></textarea>
+         </div>
+
+         <!-- Destinatario -->
+         <div class="mb-4">
+           <label for="destinatario" class="block text-sm font-medium text-gray-600 mb-1">Destinatario</label>
+           <input
+             id="destinatario"
+             type="text"
+             [(ngModel)]="destinatario"
+             name="destinatario"
+             class="w-full border-gray-300 rounded-lg shadow-sm p-2 focus:ring-blue-500 focus:border-blue-500"
+             placeholder="Nombre del destinatario"
+           />
+         </div>
+
+         <!-- Dirección del destinatario -->
+         <div class="mb-4">
+           <label for="direccionDestinatario" class="block text-sm font-medium text-gray-600 mb-1">Dirección del Destinatario</label>
+           <textarea
+             id="direccionDestinatario"
+             [(ngModel)]="direccionDestinatario"
+             name="direccionDestinatario"
+             class="w-full border-gray-300 rounded-lg shadow-sm p-2 focus:ring-blue-500 focus:border-blue-500"
+             placeholder="Dirección completa del destinatario"
+           ></textarea>
+         </div>
+
+         <!-- Detalles del paquete -->
+         <div class="mb-4">
+           <label for="detalles" class="block text-sm font-medium text-gray-600 mb-1">Detalles del Paquete</label>
+           <input
+             id="detalles"
+             type="text"
+             [(ngModel)]="detalles"
+             name="detalles"
+             class="w-full border-gray-300 rounded-lg shadow-sm p-2 focus:ring-blue-500 focus:border-blue-500"
+             placeholder="Descripción breve (peso, dimensiones, etc.)"
+           />
+         </div>
+
+         <!-- Botón -->
+         <div class="mt-6">
+           <button
+             type="button"
+             (click)="crearComanda()"
+             class="w-full bg-blue-500 text-white py-2 rounded-lg shadow hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 transition"
+           >
+             Enviar Comanda
+           </button>
+         </div>
+       </form>
+     </div>
+   }
+
+  <!-- Tarjeta de Confirmación -->
+   @if (isComandaCreated) {
+     <div class="bg-white shadow-lg rounded-lg p-8 max-w-lg w-full flex flex-col items-center text-center">
+       <span class="material-symbols-outlined text-green-500 text-6xl mb-4">check_circle</span>
+       <h2 class="text-2xl font-semibold text-gray-700 mb-2">¡Comanda Creada!</h2>
+       <p class="text-gray-600 mb-4">La comanda ha sido registrada exitosamente.</p>
+       <p class="text-sm text-gray-500">Número de Pedido: <span class="font-semibold text-gray-700">#12345</span></p>
+
+       <div class="mt-6">
+        <button type="button" class="w-full px-3 bg-blue-500 text-white py-2 rounded-lg shadow hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 transition">
+          Crear nueva comanda
+        </button>
+      </div>
+     </div>
+   }
+</div>
