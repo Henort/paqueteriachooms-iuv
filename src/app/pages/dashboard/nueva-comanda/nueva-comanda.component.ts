@@ -17,6 +17,7 @@ export class NuevaComandaComponent {
   destinatario: string = '';
   direccionDestinatario: string = '';
   detalles: string = '';
+  costoEnvio: string = '';
 
   // Estado de la comanda
   isComandaCreated: boolean = false;
@@ -31,6 +32,7 @@ export class NuevaComandaComponent {
       direccionDestinatario: this.direccionDestinatario,
       detalles: this.detalles,
     });
+    this.costoEnvio = '100.00';
     this.isComandaCreated = true;
   }
 }
