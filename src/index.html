@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>PaqueteriachoomsIuv</title>
@@ -8,7 +9,29 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
+
 <body>
   <app-root></app-root>
+
+  <script>
+    window.chatwootSettings = { "position": "right", "type": "expanded_bubble", "launcherTitle": "Soporte" };
+    (function (d, t) {
+      var BASE_URL = "https://app.chatwoot.com";
+      var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      g.src = BASE_URL + "/packs/js/sdk.js";
+      g.defer = true;
+      g.async = true;
+      s.parentNode.insertBefore(g, s);
+      g.onload = function () {
+        window.chatwootSDK.run({
+          websiteToken: 'yLLCX2V2czdu7LUKDm2sMeTc',
+          baseUrl: BASE_URL
+        })
+      }
+    })(document, "script");
+  </script>
+
+
 </body>
+
 </html>
